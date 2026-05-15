@@ -22,7 +22,7 @@ const Header = () => {
       <div className="container">
         <div className="logo-container">
           <Link to="/" onClick={closeMobileMenu}>
-            <img src="/Logo2.png" alt="Company Logo" className="site-logo" />
+            <img src="/logo.png" alt="Company Logo" className="site-logo" />
           </Link>
         </div>
 
