@@ -7,57 +7,44 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-info">
           <h3>MMD ANAALYTICS INDIA PRIVATE LIMITED</h3>
-          <p>📍 Location: Ranchi, Jharkhand<br></br>
-          📧 Email: admin@mmdai.in<br></br>📞 Phone: 6204958442<br></br><small>🏢 Office: 202, Sulakshana by Maurya Homes, Argora Kathal More Road, beside Dayal Petrol Pump, Kathal More, Ranchi</small><br></br><br></br><a 
-  href="https://wa.me/916204958442?text=Hello%20MMD%20Team,%20I%20want%20to%20know%20more%20about%20your%20services." 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  className="btn btn-whatsapp"
->
-  {/* This is the official WhatsApp SVG Logo */}
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 448 512" 
-    className="whatsapp-icon"
-  >
-    <path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.5c-32 0-63.5-8.6-91-24.9l-6.5-3.8-67.7 17.8 18-65.9-4.2-6.7C53.7 296 42 260.6 42 224c0-100.3 81.7-182 182-182 50.3 0 97.6 19.6 133.2 55.2s55.2 82.9 55.2 133.2c0 100.3-81.7 182-182.1 182zM323.7 297.2c-5.5-2.8-32.3-16-37.3-17.8-5-1.9-8.7-2.8-12.4 2.8-3.7 5.5-14.1 17.8-17.3 21.4-3.2 3.7-6.5 4.1-12 1.4-5.5-2.8-23-8.5-43.8-27.1-16.2-14.5-27.1-32.4-30.4-37.9-3.2-5.5-.3-8.5 2.5-11.3 2.5-2.5 5.5-6.4 8.2-9.6 2.8-3.2 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.6-1.4-2.8-12.4-30.1-17-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.6 1.4-14.7 6.9-5 5.5-19.3 18.8-19.3 45.9 0 27.1 19.8 53.2 22.5 56.9 2.8 3.7 38.8 59.3 94 83.1 13.1 5.6 23.3 9 31.3 11.5 13.2 4.2 25.2 3.6 34.7 2.2 10.6-1.6 32.3-13.2 36.9-25.9 4.6-12.8 4.6-23.7 3.2-25.9-1.3-2.3-5-3.7-10.5-6.5z"/>
-  </svg>
-  <span>WhatsApp</span>
-</a>            {/* Instagram Action Button */}
-<a 
-  href="https://instagram.com/mmdai.in" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  className="btn btn-instagram"
->
-  {/* Official Instagram SVG Logo */}
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 448 512" 
-    className="social-icon"
-  >
-    <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-  </svg>
-  <span>Instagram</span>
-</a>
-<a 
-  href="https://www.linkedin.com/company/mmd-anaalytics-india-private-limited/" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="btn btn-linkedin"
->
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 448 512" 
-    className="social-icon"
-  >
-    <path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 84.08 0 54.16 0 24.16 24.1 0 53.79 0c29.69 0 53.79 24.16 53.79 54.16 0 29.92-24.1 53.94-53.79 53.94zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
-  </svg>
-  <span>LinkedIn</span>
-</a></p>
-        </div>
-        <div className="footer-links">
-          <p>&copy; 2024 MMD ANAALYTICS. All rights reserved.</p>
+          <p>
+            📍 Location: Ranchi, Jharkhand<br />
+            📧 Email: admin@mmdai.in<br />
+            📞 Phone: 6204958442<br />
+            <small>
+              🏢 Office: 202, Sulakshana by Maurya Homes, Argora Kathal More Road,
+              beside Dayal Petrol Pump, Kathal More, Ranchi
+            </small>
+          </p>
+
+          <div className="social-buttons-container">
+            <a
+              href="https://wa.me/916204958442?text=Hello%20MMD%20Team,%20I%20want%20to%20know%20more%20about%20your%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-whatsapp"
+            >
+              <span>WhatsApp</span>
+            </a>
+
+            <a
+              href="https://instagram.com/mmdai.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-instagram"
+            >
+              <span>Instagram</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/company/mmd-anaalytics-india-private-limited/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-linkedin"
+            >
+              <span>LinkedIn</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

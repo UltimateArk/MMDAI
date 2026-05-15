@@ -192,3 +192,24 @@ h1, h2, h3 {
     font-size: 1.75rem !important; 
   }
 }
+/* =========================================
+   📱 UNIVERSAL MOBILE WIDTH FIX
+   ========================================= */
+@media screen and (max-width: 768px) {
+  /* Forces all main wrappers to stretch the full width of the phone */
+  .main-layout, 
+  .home-container,
+  .page-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 8px !important; /* Reduces side gaps to a tiny 8px */
+    margin: 10px auto !important;
+    box-sizing: border-box;
+  }
+
+  /* Ensures the white content boxes don't waste space */
+  .content-area {
+    padding: 20px 15px !important; 
+    border-radius: 12px !important; 
+  }
+}
