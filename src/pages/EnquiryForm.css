@@ -99,3 +99,25 @@
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(20, 196, 181, 0.25);
 }
+
+/* =========================================
+   📱 MOBILE RESPONSIVENESS FIX
+   ========================================= */
+@media screen and (max-width: 768px) {
+  .enquiry-page-wrapper {
+    padding: 30px 10px; /* Reduces outer wrapper padding on phones */
+  }
+
+  .enquiry-card {
+    padding: 30px 20px; /* Drastically cuts inner padding to let inputs stretch */
+    border-radius: 12px;
+  }
+
+  .enquiry-header h1 {
+    font-size: 1.8rem; /* Scales down the header text slightly to fit better */
+  }
+
+  .enquiry-header p {
+    font-size: 1rem;
+  }
+}

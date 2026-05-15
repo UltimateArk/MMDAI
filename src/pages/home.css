@@ -18,16 +18,20 @@
 /* =========================================
    2. PREMIUM HERO BANNER (TOP SECTION)
    ========================================= */
+/* =========================================
+   2. PREMIUM HERO BANNER (TOP SECTION)
+   ========================================= */
 .hero-section {
-  /* Rich, deep corporate blue gradient background */
+  /* Forces the box to perfectly center itself */
+  width: 100%;
+  margin: 0 auto 40px auto; 
+  
   background: linear-gradient(135deg, var(--dark-blue) 0%, #111c26 100%); 
-  padding: 80px 20px; /* Adjusted padding for better centered spacing */
+  padding: 80px 20px; 
   border-radius: 16px; 
-  margin-top: -10px; 
-  margin-bottom: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
   
-  /* Flexbox Centering Magic */
+  /* Flexbox Centering for the text inside */
   display: flex;
   flex-direction: column;
   align-items: center;

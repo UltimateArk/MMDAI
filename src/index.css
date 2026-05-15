@@ -11,6 +11,12 @@
   --text-dark: #333;
   --text-light: #FFF;
 }
+/* =========================================
+   GLOBAL CSS RESET (Fixes shifting boxes)
+   ========================================= */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
 
 body {
   margin: 0;

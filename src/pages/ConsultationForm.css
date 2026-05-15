@@ -210,18 +210,40 @@
   box-shadow: none;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* =========================================
+   📱 MOBILE RESPONSIVENESS FIX
+   ========================================= */
 @media screen and (max-width: 768px) {
+  
+  /* Reduces outer wrapper padding on phones */
+  .consultation-page-wrapper {
+    padding: 30px 10px; 
+  }
+
+  /* Drastically cuts inner padding to let inputs stretch across the screen */
   .consultation-card {
-    padding: 40px 25px;
+    padding: 30px 20px; 
+    border-radius: 16px;
   }
   
+  /* Stacks side-by-side inputs (Name/Phone) vertically */
   .form-row {
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
   }
   
+  /* Scales down the header text so it doesn't wrap awkwardly */
   .consultation-header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .consultation-header p {
+    font-size: 1rem;
+  }
+
+  /* Tightens up the checkbox container to save screen real estate */
+  .checkbox-group {
+    padding: 15px;
+    gap: 12px;
   }
 }
