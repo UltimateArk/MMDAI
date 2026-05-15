@@ -1,0 +1,246 @@
+/* =========================================
+   1. GLOBAL VARIABLES & CONTAINERS
+   ========================================= */
+:root {
+  --accent-teal: #14c4b5;
+  --dark-blue: #1a2a3a;
+  --text-gray: #4a5568;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 1400px; /* Adjusts the overall width of the home page content */
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* =========================================
+   2. PREMIUM HERO BANNER (TOP SECTION)
+   ========================================= */
+.hero-section {
+  /* Rich, deep corporate blue gradient background */
+  background: linear-gradient(135deg, var(--dark-blue) 0%, #111c26 100%); 
+  padding: 80px 20px; /* Adjusted padding for better centered spacing */
+  border-radius: 16px; 
+  margin-top: -10px; 
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+  
+  /* Flexbox Centering Magic */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Main title styling */
+.hero-section h1 {
+  color: #ffffff;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  margin-top: 0;
+  
+  /* Forces the text and underline to stack and center */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Teal underline for the Main Title (Bulletproof Centering) */
+.hero-section h1::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 80px; 
+  background-color: var(--accent-teal);
+  border-radius: 3px;
+  margin-top: 15px; /* Creates the gap between text and bar */
+}
+
+/* Subtitle styling */
+.hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #cbd5e1; /* Light silver for readability on dark blue */
+  margin: 10px auto 30px auto; /* Centers the text block itself */
+  max-width: 800px;
+}
+
+/* Divider inside the dark banner */
+.hero-section .divider {
+  background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.2), rgba(255,255,255,0));
+  margin: 30px 0;
+  width: 100%;
+}
+
+/* =========================================
+   3. INTERACTIVE ACTION BUTTONS
+   ========================================= */
+/* Replaced action-buttons-grid with hero-buttons for centered layout */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+  justify-content: center; /* perfectly centers the buttons */
+  width: 100%;
+  max-width: 900px;
+}
+
+.interactive-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+}
+
+/* Lifts and enlarges the button on hover */
+.interactive-btn:hover {
+  transform: translateY(-4px) scale(1.02); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+}
+
+/* Solid Teal Primary Button */
+.btn-primary {
+  background-color: var(--accent-teal);
+  color: white;
+  border: 2px solid var(--accent-teal);
+}
+
+.btn-primary:hover {
+  background-color: #10a396;
+  border-color: #10a396;
+}
+
+/* Glass-effect Secondary Button */
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.08); 
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.btn-secondary:hover {
+  background-color: #ffffff;
+  color: var(--dark-blue); 
+  border-color: #ffffff;
+}
+
+/* Clean White Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-outline:hover {
+  background-color: #ffffff;
+  color: var(--dark-blue);
+}
+
+/* =========================================
+   4. SECTION CONTENT & HEADINGS
+   ========================================= */
+
+/* Professional Teal Bar Headings */
+.who-we-are h2, 
+.our-services h2, 
+.why-choose-us h2 {
+  position: relative;
+  color: var(--dark-blue); 
+  font-weight: 700;
+  letter-spacing: 0.5px; 
+  padding: 12px 18px; 
+  margin-bottom: 25px;
+  margin-top: 0;
+  background-color: #f4f7f9; 
+  border-left: 6px solid var(--accent-teal); 
+  border-radius: 0 8px 8px 0; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02); 
+}
+
+/* Standard Paragraph Styling */
+.who-we-are p,
+.our-services dd {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-gray);
+  margin: 0 0 15px 0;
+}
+
+/* Services Dictionary List Styling */
+.our-services dl {
+  margin-bottom: 30px;
+}
+
+.our-services dt {
+  font-size: 1.15rem;
+  color: var(--dark-blue);
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.our-services dd {
+  margin-left: 0; /* Aligns description cleanly under title */
+}
+
+/* Standard Divider for White Sections */
+.divider {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  margin: 40px 0;
+}
+
+/* =========================================
+   5. LISTS (WHY CHOOSE US)
+   ========================================= */
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 15px;
+}
+
+.benefits-list li {
+  font-size: 1.1rem;
+  color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+}
+
+/* Removes standard bolding from <big> tags to look cleaner */
+.benefits-list big {
+  font-size: 1.05rem;
+}
+
+/* =========================================
+   6. MOBILE RESPONSIVENESS
+   ========================================= */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding: 50px 20px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .interactive-btn {
+    width: 100%; /* Makes buttons full width on small phones */
+    margin-bottom: 5px;
+  }
+}
