@@ -17,7 +17,7 @@ const Home = () => {
         {/* We removed the hr divider here to keep the hero section cleaner when centered! */}
 
         <div className="hero-buttons">
-  <a href="PASTE_DEMAT_URL_HERE" target="_blank" rel="noopener noreferrer" className="btn btn-primary interactive-btn">
+  <a href="https://hniekyc2.bajajfinservsecurities.in:443/?RmCode=YZHe7mPVh2F6j11ynlv5gw==&Id=HfAZznRaanhPXIwgLG0s3w==&utm_source=GeneralLink&utm_medium=medium&utm_campaign=campaign" target="_blank" rel="noopener noreferrer" className="btn btn-primary interactive-btn">
     🟢 Open Demat Account
   </a>
   
