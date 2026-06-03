@@ -1,211 +1,350 @@
-/* =========================================
-   1. MAIN CONTAINER
-   ========================================= */
-.about-container {
-  width: 100%;
-  max-width: 1400px; 
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+/* ============================================================
+   CONTACT US — MMD Analytics · Dark Gold / Teal Theme
+   Consistent with CoalTrading & TickerTape components
+============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+
+/* ── 1. TOKENS ── */
+.cu-root {
+  --gold:         #C9A84C;
+  --gold-light:   #F0D080;
+  --gold-dim:     rgba(201, 168, 76, 0.15);
+  --gold-border:  rgba(201, 168, 76, 0.2);
+  --teal:         #00C9A7;
+  --teal-dim:     rgba(0, 201, 167, 0.1);
+  --teal-border:  rgba(0, 201, 167, 0.22);
+  --dark-0:       #060B0E;
+  --dark-1:       #0C1419;
+  --dark-2:       #111D23;
+  --dark-3:       #182530;
+  --text-main:    #EAE6DC;
+  --text-sub:     rgba(220, 210, 185, 0.58);
+
+  background:  var(--dark-0);
+  color:       var(--text-main);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height:  100vh;
+  padding:     0;
+  margin:      0;
 }
 
-/* =========================================
-   2. HERO BANNER
-   ========================================= */
-.hero-section {
-  background: linear-gradient(135deg, #1a2a3a 0%, #111c26 100%); 
-  padding: 60px 50px;
-  border-radius: 16px; 
-  margin-top: -10px; 
-  margin-bottom: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
-  text-align: center;
+/* ── 2. HERO ── */
+.cu-hero {
+  position:      relative;
+  background:    var(--dark-1);
+  padding:       60px 52px 52px;
+  overflow:      hidden;
+  border-bottom: 1px solid var(--gold-border);
 }
 
-.hero-section h1 {
-  color: #ffffff;
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin: 0;
-  position: relative;
-  display: inline-block;
+.cu-hero-grid {
+  position:         absolute;
+  inset:            0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events:  none;
 }
 
-.hero-section h1::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -12px;
-  height: 5px;
-  width: 80px; 
-  background-color: #14c4b5; 
-  border-radius: 3px;
+.cu-hero-orb {
+  position:      absolute;
+  right:        -60px;
+  top:          -60px;
+  width:         320px;
+  height:        320px;
+  background:    radial-gradient(circle at center, rgba(0,201,167,0.09) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-/* =========================================
-   3. THE GRID LAYOUT (The White Card)
-   ========================================= */
-.contact-information {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 50px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
-  border: 1px solid #f1f5f9;
+.cu-hero-badge {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            7px;
+  background:     var(--teal-dim);
+  border:         1px solid var(--teal-border);
+  color:          var(--teal);
+  font-size:      11px;
+  font-weight:    600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  padding:        5px 14px;
+  border-radius:  4px;
+  margin-bottom:  20px;
 }
 
-/* This is what creates the side-by-side look on Desktop */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr; /* Map gets slightly more space than text */
-  gap: 60px; /* Space between the text column and map column */
-  align-items: start;
+.cu-hero-title {
+  font-family:    'Cormorant Garamond', Georgia, serif;
+  font-size:      clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight:    700;
+  color:          var(--gold);
+  letter-spacing: 0.5px;
+  line-height:    1.08;
+  margin:         0 0 14px;
 }
 
-/* Headings for both columns */
-.info-block h2,
-.contact-map h2 {
-  position: relative;
-  color: #1a2a3a; 
-  font-weight: 700;
-  letter-spacing: 0.5px; 
-  padding: 12px 18px; 
-  margin-bottom: 20px;
-  margin-top: 0;
-  background-color: #f4f7f9; 
-  border-left: 6px solid #14c4b5; 
-  border-radius: 0 8px 8px 0; 
-  display: inline-block; 
+.cu-hero-title span {
+  color:       var(--text-main);
+  font-weight: 400;
 }
 
-/* =========================================
-   4. TEXT AND LINKS STYLING
-   ========================================= */
-/* =========================================
-   4. INTERACTIVE CONTACT CARDS
-   ========================================= */
-.contact-links {
-  display: flex;
+.cu-hero-sub {
+  font-size:   0.98rem;
+  color:       var(--text-sub);
+  line-height: 1.8;
+  max-width:   540px;
+  margin:      0;
+  font-weight: 300;
+}
+
+/* ── 3. BODY ── */
+.cu-body {
+  padding:   52px 52px 68px;
+  max-width: 1200px;
+}
+
+/* ── 4. TWO-COLUMN GRID ── */
+.cu-grid {
+  display:               grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap:                   36px;
+  align-items:           start;
+}
+
+/* ── 5. LEFT INFO PANEL ── */
+.cu-panel {
+  background:    var(--dark-2);
+  border:        1px solid var(--gold-border);
+  border-radius: 12px;
+  padding:       32px 28px;
+}
+
+.cu-section-label {
+  display:       flex;
+  align-items:   center;
+  gap:           10px;
+  margin-bottom: 22px;
+}
+
+.cu-section-label::after {
+  content:    '';
+  flex:       1;
+  height:     1px;
+  background: linear-gradient(90deg, rgba(201,168,76,0.3), transparent);
+}
+
+.cu-section-label span {
+  font-size:      10.5px;
+  font-weight:    600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color:          var(--gold);
+}
+
+.cu-company-name {
+  font-family:  'Cormorant Garamond', serif;
+  font-size:    1.45rem;
+  font-weight:  700;
+  color:        var(--text-main);
+  margin:       0 0 12px;
+}
+
+.cu-address {
+  font-size:   0.88rem;
+  color:       var(--text-sub);
+  line-height: 1.9;
+  margin:      0 0 28px;
+  font-weight: 300;
+}
+
+.cu-address strong {
+  color:       rgba(201, 168, 76, 0.75);
+  font-weight: 500;
+}
+
+.cu-divider {
+  border:     none;
+  height:     1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.18), transparent);
+  margin:     0 0 24px;
+}
+
+/* Contact cards */
+.cu-contact-stack {
+  display:        flex;
   flex-direction: column;
-  gap: 16px; /* Adds perfect spacing between the buttons */
-  margin-left: 5px;
-  margin-top: 15px;
+  gap:            12px;
+  margin-bottom:  22px;
 }
 
-/* The Base Button Appearance */
-.interactive-contact-card {
-  display: inline-flex;
-  align-items: center;
-  padding: 12px 20px;
-  background-color: #f8fafc; /* Very light, clean gray background */
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  color: #1a2a3a;
+.cu-contact-card {
+  display:         flex;
+  align-items:     center;
+  gap:             14px;
+  background:      var(--dark-3);
+  border:          1px solid rgba(255, 255, 255, 0.05);
+  border-radius:   10px;
+  padding:         14px 18px;
   text-decoration: none;
-  font-size: 1.1rem;
+  color:           var(--text-main);
+  transition:      border-color 0.22s ease, background 0.22s ease, transform 0.2s ease;
+}
+
+.cu-contact-card:hover {
+  border-color: var(--teal-border);
+  background:   rgba(0, 201, 167, 0.07);
+  transform:    translateY(-2px);
+}
+
+.cu-card-icon {
+  font-size:     20px;
+  width:         36px;
+  height:        36px;
+  flex-shrink:   0;
+  display:       flex;
+  align-items:   center;
+  justify-content: center;
+  background:    var(--teal-dim);
+  border:        1px solid var(--teal-border);
+  border-radius: 8px;
+}
+
+.cu-card-lbl {
+  font-size:      10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:          var(--text-sub);
+  margin-bottom:  3px;
+}
+
+.cu-card-val {
+  font-size:   0.9rem;
+  font-weight: 500;
+  color:       var(--text-main);
+}
+
+/* Working hours pill */
+.cu-hours {
+  display:      inline-flex;
+  align-items:  center;
+  gap:          9px;
+  background:   var(--gold-dim);
+  border:       1px solid var(--gold-border);
+  border-radius: 8px;
+  padding:      10px 16px;
+}
+
+.cu-hours-icon { font-size: 16px; }
+
+.cu-hours-text {
+  font-size: 0.82rem;
+  color:     rgba(201, 168, 76, 0.9);
+}
+
+.cu-hours-text strong {
   font-weight: 600;
-  width: fit-content; /* Keeps the button only as wide as the text */
-  
-  /* Smooth animation timing for everything */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
 }
 
-.contact-icon {
-  margin-right: 12px;
-  font-size: 1.4rem;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
-}
-
-/* --- THE HOVER EFFECTS --- */
-.interactive-contact-card:hover {
-  background-color: #14c4b5; /* Instantly fills with MMD Teal */
-  border-color: #14c4b5;
-  color: #ffffff; /* Turns text white for contrast */
-  
-  /* Lifts the button up and creates a teal glowing shadow */
-  transform: translateY(-5px); 
-  box-shadow: 0 10px 20px rgba(20, 196, 181, 0.25);
-}
-
-/* Makes the emoji "pop" and slightly rotate when the button is hovered */
-.interactive-contact-card:hover .contact-icon {
-  transform: scale(1.25) rotate(10deg);
-}
-
-/* Working Hours Text */
-.working-hours {
-  font-size: 1.1rem;
-  color: #4a5568;
-  margin-top: 20px;
-  padding-left: 5px;
-}
-
-/* =========================================
-   5. MAP STYLING
-   ========================================= */
-.map-frame-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%; /* Fills the height of the grid cell */
-  min-height: 380px; /* Ensures it never gets too small on desktop */
+/* ── 6. RIGHT MAP PANEL ── */
+.cu-map-panel {
+  background:    var(--dark-2);
+  border:        1px solid var(--gold-border);
   border-radius: 12px;
-  overflow: hidden; 
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); 
-  border: 2px solid #e2e8f0;
+  overflow:      hidden;
 }
 
-.map-frame-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.cu-map-header {
+  padding:       18px 24px 16px;
+  border-bottom: 1px solid var(--gold-border);
+  display:       flex;
+  align-items:   center;
+  gap:           10px;
 }
 
-/* =========================================
-   6. 📱 MOBILE RESPONSIVENESS (Stack vertically)
-   ========================================= */
+.cu-map-pin { font-size: 16px; }
+
+.cu-map-title {
+  font-family:  'Cormorant Garamond', serif;
+  font-size:    1.1rem;
+  font-weight:  700;
+  color:        var(--text-main);
+  margin:       0;
+}
+
+.cu-map-frame {
+  display:    block;
+  width:      100%;
+  height:     380px;
+  border:     none;
+
+  /* Desaturate to match dark theme; lifts on hover */
+  filter:     saturate(0.4) brightness(0.7);
+  transition: filter 0.3s ease;
+}
+
+.cu-map-panel:hover .cu-map-frame {
+  filter: saturate(0.65) brightness(0.88);
+}
+
+/* Map footer */
+.cu-map-footer {
+  padding:         14px 20px;
+  border-top:      1px solid rgba(201, 168, 76, 0.12);
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             12px;
+}
+
+.cu-map-addr {
+  font-size:   0.78rem;
+  color:       var(--text-sub);
+  line-height: 1.6;
+  margin:      0;
+}
+
+.cu-dir-btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             6px;
+  background:      var(--gold);
+  color:           #07100E;
+  font-family:     'DM Sans', sans-serif;
+  font-size:       0.78rem;
+  font-weight:     600;
+  letter-spacing:  0.3px;
+  padding:         9px 18px;
+  border-radius:   7px;
+  border:          none;
+  cursor:          pointer;
+  text-decoration: none;
+  white-space:     nowrap;
+  flex-shrink:     0;
+  transition:      background 0.2s ease, transform 0.18s ease;
+}
+
+.cu-dir-btn:hover {
+  background: var(--gold-light);
+  transform:  translateY(-1px);
+}
+
+.cu-dir-btn:active { transform: scale(0.97); }
+
+/* ── 7. RESPONSIVE ── */
 @media screen and (max-width: 900px) {
-  /* Break the grid into a single stacked column on smaller screens */
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .cu-hero { padding: 40px 22px 36px; }
+  .cu-body  { padding: 32px 22px 52px; }
+
+  .cu-grid { grid-template-columns: 1fr; }
+
+  .cu-map-frame { height: 300px; }
+
+  .cu-map-footer {
+    flex-direction: column;
+    align-items:    flex-start;
   }
 
-  .about-container {
-    padding: 15px 10px;
-  }
-
-  .hero-section {
-    padding: 40px 20px;
-    border-radius: 12px;
-  }
-  
-  .hero-section h1 {
-    font-size: 2.2rem;
-  }
-
-  .contact-information {
-    padding: 25px 20px;
-  }
-
-  .info-block h2,
-  .contact-map h2 {
-    font-size: 1.2rem;
-    min-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .info-block p,
-  .contact-links a,
-  .contact-links p {
-    font-size: 1.05rem;
-  }
-
-  .map-frame-wrapper {
-    height: 350px; 
-    min-height: auto;
-    border-radius: 8px;
-  }
+  .cu-dir-btn { width: 100%; justify-content: center; }
 }

@@ -1,118 +1,490 @@
-/* =========================================
-   1. MAIN CONTAINER
-   ========================================= */
-.about-container {
-  width: 100%;
-  max-width: 1400px; 
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+/* ============================================================
+   ABOUT US — MMD Analytics · Dark Gold / Teal Theme
+   Consistent with CoalTrading, ContactUs, Home, BajajBroking
+============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── 1. TOKENS ── */
+.au-root {
+  --gold:      #C9A84C;
+  --gold-l:    #F0D080;
+  --gold-dim:  rgba(201, 168, 76, 0.15);
+  --gb:        rgba(201, 168, 76, 0.2);
+  --teal:      #00C9A7;
+  --td:        rgba(0, 201, 167, 0.11);
+  --tb:        rgba(0, 201, 167, 0.22);
+  --d0:        #060B0E;
+  --d1:        #0C1419;
+  --d2:        #111D23;
+  --d3:        #182530;
+  --tm:        #EAE6DC;
+  --ts:        rgba(220, 210, 185, 0.58);
+
+  background:  var(--d0);
+  color:       var(--tm);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height:  100vh;
+  padding:     0;
+  margin:      0;
 }
 
-/* =========================================
-   2. HERO BANNER (Top Section)
-   ========================================= */
-.hero-section {
-  background: linear-gradient(135deg, #1a2a3a 0%, #111c26 100%); 
-  padding: 60px 50px;
-  border-radius: 16px; 
-  margin-top: -10px; 
-  margin-bottom: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+/* ── 2. HERO ── */
+.au-hero {
+  position:      relative;
+  background:    var(--d1);
+  padding:       64px 52px 56px;
+  overflow:      hidden;
+  border-bottom: 1px solid var(--gb);
 }
 
-.hero-section h1 {
-  color: #ffffff;
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  margin-top: 0;
-  position: relative;
-  display: inline-block;
+.au-grid {
+  position:        absolute;
+  inset:           0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events:  none;
 }
 
-.hero-section h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  height: 5px;
-  width: 80px; 
-  background-color: #14c4b5; /* Accent Teal */
-  border-radius: 3px;
+.au-orb1 {
+  position:      absolute;
+  right:        -60px; top: -60px;
+  width:         360px; height: 360px;
+  border-radius: 50%;
+  background:    radial-gradient(circle, rgba(0,201,167,0.09) 0%, transparent 65%);
+  pointer-events: none;
 }
 
-.hero-subtitle {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #cbd5e1; 
-  margin-bottom: 10px;
-  max-width: 900px;
+.au-orb2 {
+  position:      absolute;
+  left:          30%; bottom: -80px;
+  width:         260px; height: 260px;
+  border-radius: 50%;
+  background:    radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 65%);
+  pointer-events: none;
 }
 
-/* =========================================
-   3. CONTENT BLOCKS & HEADINGS
-   ========================================= */
-.about-content {
-  padding: 20px 0;
+.au-badge {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            7px;
+  background:     var(--td);
+  border:         1px solid var(--tb);
+  color:          var(--teal);
+  font-size:      11px;
+  font-weight:    600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  padding:        5px 14px;
+  border-radius:  4px;
+  margin-bottom:  20px;
 }
 
-.info-block p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #4a5568;
-  max-width: 1000px;
+.au-hero-title {
+  font-family:  'Cormorant Garamond', Georgia, serif;
+  font-size:    clamp(2.2rem, 4.2vw, 3.5rem);
+  font-weight:  700;
+  color:        var(--tm);
+  line-height:  1.1;
+  margin:       0 0 16px;
 }
 
-/* Professional Teal Bar Headings */
-.info-block h2 {
-  position: relative;
-  color: #1a2a3a; 
-  font-weight: 700;
-  letter-spacing: 0.5px; 
-  padding: 12px 18px; 
-  margin-bottom: 25px;
-  margin-top: 0;
-  background-color: #f4f7f9; 
-  border-left: 6px solid #14c4b5; 
-  border-radius: 0 8px 8px 0; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02); 
-  display: inline-block; 
-  min-width: 250px;
+.au-hero-title em {
+  color:       var(--gold);
+  font-style:  normal;
 }
 
-/* Standard Divider */
-.divider {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
-  margin: 40px 0;
+.au-hero-sub {
+  font-size:   0.97rem;
+  color:       var(--ts);
+  line-height: 1.8;
+  max-width:   600px;
+  font-weight: 300;
+  margin:      0;
 }
 
-/* =========================================
-   4. CUSTOM LIST (Mission Points)
-   ========================================= */
-.custom-list {
-  list-style-type: none;
-  padding: 0;
-  display: grid;
-  gap: 15px;
+/* ── 3. SECTION LABEL ── */
+.au-sec {
+  display:       flex;
+  align-items:   center;
+  gap:           10px;
+  margin-bottom: 28px;
 }
 
-.custom-list li {
-  position: relative;
-  padding-left: 30px;
-  font-size: 1.1rem;
-  color: #2d3748;
+.au-sec::after {
+  content:    '';
+  flex:       1;
+  height:     1px;
+  background: linear-gradient(90deg, rgba(201,168,76,0.3), transparent);
+}
+
+.au-sec span {
+  font-size:      10.5px;
+  font-weight:    600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color:          var(--gold);
+  white-space:    nowrap;
+}
+
+/* ── 4. OUR STORY ── */
+.au-story {
+  padding:               52px 52px 56px;
+  display:               grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap:                   44px;
+  align-items:           start;
+}
+
+/* The section label spans full width */
+.au-story > .au-sec {
+  grid-column: 1 / -1;
+  margin-bottom: 8px;
+}
+
+/* Image card */
+.au-story-img {
+  background:    var(--d2);
+  border:        1px solid var(--gb);
+  border-radius: 12px;
+  overflow:      hidden;
+}
+
+.au-img-inner {
+  height:          320px;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  gap:             10px;
+  background:      linear-gradient(160deg, #0e2030 0%, #1a3a28 100%);
+  position:        relative;
+}
+
+/* Replace this block with a real <img> when photos are available:
+   .au-img-inner { background-image: url('/images/office.jpg'); background-size: cover; background-position: center; }
+   and remove .au-img-pattern, .au-img-icon, .au-img-label
+*/
+.au-img-pattern {
+  position:        absolute;
+  inset:           0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events:  none;
+}
+
+.au-img-icon  { font-size: 3rem; position: relative; z-index: 1; }
+.au-img-label { font-size: 0.85rem; color: var(--ts); position: relative; z-index: 1; font-weight: 300; }
+
+.au-img-footer {
+  padding:      14px 18px;
+  border-top:   1px solid var(--gb);
+  display:      flex;
+  align-items:  center;
+  gap:          8px;
+}
+
+.au-img-dot {
+  width:         8px;
+  height:        8px;
+  border-radius: 50%;
+  background:    var(--teal);
+  box-shadow:    0 0 6px rgba(0,201,167,0.6);
+  flex-shrink:   0;
+}
+
+.au-img-loc {
+  font-size:   0.8rem;
+  color:       rgba(201,168,76,0.8);
   font-weight: 500;
 }
 
-/* Sleek teal square bullet point */
-.custom-list li::before {
-  content: "■";
-  color: #14c4b5;
-  position: absolute;
-  left: 0;
-  top: 1px;
-  font-size: 0.9rem;
+/* Story text */
+.au-story-h {
+  font-family:  'Cormorant Garamond', serif;
+  font-size:    2rem;
+  font-weight:  700;
+  color:        var(--tm);
+  line-height:  1.15;
+  margin:       0 0 18px;
+}
+
+.au-story-h em {
+  color:      var(--gold);
+  font-style: italic;
+}
+
+.au-story-p {
+  font-size:   0.88rem;
+  color:       var(--ts);
+  line-height: 1.85;
+  margin:      0 0 14px;
+  font-weight: 300;
+}
+
+.au-story-btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             7px;
+  background:      transparent;
+  color:           var(--teal);
+  border:          1px solid var(--tb);
+  font-family:     'DM Sans', sans-serif;
+  font-size:       0.84rem;
+  font-weight:     500;
+  padding:         10px 20px;
+  border-radius:   8px;
+  cursor:          pointer;
+  text-decoration: none;
+  margin-top:      8px;
+  transition:      background 0.2s, border-color 0.2s;
+}
+
+.au-story-btn:hover {
+  background:   var(--td);
+  border-color: var(--teal);
+}
+
+/* ── 5. DIVIDER ── */
+.au-divider {
+  border:     none;
+  height:     1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent);
+  margin:     0;
+}
+
+/* ── 6. MISSION & VISION ── */
+.au-mv {
+  background:    var(--d1);
+  padding:       52px 52px 56px;
+  border-top:    1px solid var(--gb);
+  border-bottom: 1px solid var(--gb);
+}
+
+.au-mv-grid {
+  display:               grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap:                   20px;
+}
+
+/* Shared card base */
+.au-vision,
+.au-mission {
+  background:    var(--d2);
+  border:        1px solid var(--gb);
+  border-radius: 12px;
+  padding:       28px 26px;
+  position:      relative;
+  overflow:      hidden;
+}
+
+/* Teal top accent = Vision */
+.au-vision::before {
+  content:    '';
+  position:   absolute;
+  top:        0; left: 0; right: 0;
+  height:     2px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+}
+
+/* Gold top accent = Mission */
+.au-mission::before {
+  content:    '';
+  position:   absolute;
+  top:        0; left: 0; right: 0;
+  height:     2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.au-card-tag {
+  font-size:      10px;
+  font-weight:    600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color:          var(--teal);
+  margin-bottom:  12px;
+}
+
+.au-card-title {
+  font-family:  'Cormorant Garamond', serif;
+  font-size:    1.45rem;
+  font-weight:  700;
+  color:        var(--tm);
+  margin:       0 0 12px;
+}
+
+.au-card-body {
+  font-size:   0.85rem;
+  color:       var(--ts);
+  line-height: 1.8;
+  margin:      0;
+  font-weight: 300;
+}
+
+/* Mission list */
+.au-mission-list {
+  list-style:     none;
+  padding:        0;
+  display:        flex;
+  flex-direction: column;
+  gap:            13px;
+  margin-top:     16px;
+}
+
+.au-mission-list li {
+  display:     flex;
+  align-items: flex-start;
+  gap:         12px;
+  font-size:   0.84rem;
+  color:       var(--ts);
+  line-height: 1.6;
+}
+
+.au-ml-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size:   1.1rem;
+  font-weight: 700;
+  color:       var(--gold);
+  flex-shrink: 0;
+  line-height: 1.2;
+  min-width:   22px;
+  opacity:     0.8;
+  padding-top: 1px;
+}
+
+.au-ml-strong {
+  display:     block;
+  font-size:   0.88rem;
+  font-weight: 600;
+  color:       var(--tm);
+  margin-bottom: 2px;
+}
+
+/* ── 7. VALUES ── */
+.au-values {
+  padding: 52px 52px 48px;
+}
+
+.au-values-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   16px;
+}
+
+.au-val {
+  background:    var(--d2);
+  border:        1px solid rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding:       22px 20px;
+  position:      relative;
+  overflow:      hidden;
+  transition:    border-color 0.22s, background 0.22s, transform 0.2s;
+}
+
+/* Left teal accent line on hover */
+.au-val::before {
+  content:    '';
+  position:   absolute;
+  top:        0; left: 0; bottom: 0;
+  width:      2px;
+  background: var(--teal);
+  opacity:    0;
+  transition: opacity 0.25s;
+}
+
+.au-val:hover {
+  border-color: var(--tb);
+  background:   var(--d3);
+  transform:    translateY(-2px);
+}
+
+.au-val:hover::before { opacity: 1; }
+
+.au-val-icon  { font-size: 20px; margin-bottom: 12px; }
+
+.au-val-title {
+  font-family:  'Cormorant Garamond', serif;
+  font-size:    1.15rem;
+  font-weight:  700;
+  color:        var(--tm);
+  margin:       0 0 7px;
+}
+
+.au-val-desc  { font-size: 0.8rem; color: var(--ts); line-height: 1.65; margin: 0; }
+
+/* ── 8. CTA BANNER ── */
+.au-cta {
+  margin:          0 52px 60px;
+  background:      linear-gradient(135deg, var(--d2) 0%, var(--d3) 100%);
+  border:          1px solid var(--gb);
+  border-radius:   12px;
+  padding:         36px 40px;
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             24px;
+  flex-wrap:       wrap;
+}
+
+.au-cta-left h3 {
+  font-family:  'Cormorant Garamond', serif;
+  font-size:    1.55rem;
+  font-weight:  700;
+  color:        var(--tm);
+  margin:       0 0 6px;
+}
+
+.au-cta-left p {
+  font-size:   0.88rem;
+  color:       var(--ts);
+  margin:      0;
+  font-weight: 300;
+}
+
+.au-cta-btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             7px;
+  background:      var(--gold);
+  color:           #07100E;
+  font-family:     'DM Sans', sans-serif;
+  font-size:       0.88rem;
+  font-weight:     600;
+  padding:         13px 26px;
+  border-radius:   8px;
+  border:          none;
+  cursor:          pointer;
+  text-decoration: none;
+  white-space:     nowrap;
+  flex-shrink:     0;
+  transition:      background 0.2s, transform 0.18s;
+}
+
+.au-cta-btn:hover { background: var(--gold-l); transform: translateY(-2px); }
+.au-cta-btn:active { transform: scale(0.97); }
+
+/* ── 9. RESPONSIVE ── */
+@media screen and (max-width: 900px) {
+  .au-hero  { padding: 40px 22px 36px; }
+
+  .au-story { grid-template-columns: 1fr; padding: 36px 22px 40px; }
+  .au-story > .au-sec { grid-column: 1; }
+  .au-img-inner { height: 240px; }
+
+  .au-mv    { padding: 36px 22px 40px; }
+  .au-mv-grid { grid-template-columns: 1fr; }
+
+  .au-values { padding: 36px 22px 40px; }
+  .au-values-grid { grid-template-columns: 1fr; }
+
+  .au-cta   { margin: 0 22px 48px; flex-direction: column; align-items: flex-start; }
+  .au-cta-btn { width: 100%; justify-content: center; }
+}
+
+@media screen and (max-width: 600px) {
+  .au-values-grid { grid-template-columns: 1fr; }
 }

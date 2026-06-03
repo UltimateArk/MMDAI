@@ -1,0 +1,144 @@
+.fp {
+  padding: 3rem 1.5rem;
+  color: #f7f7f7;
+  background: radial-gradient(circle at top left, rgba(0, 201, 167, 0.12), transparent 40%),
+    linear-gradient(180deg, #07101a 0%, #0b1720 100%);
+}
+
+.fp-hero {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto 3rem;
+  padding: 2.5rem;
+  background: rgba(10, 20, 29, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+}
+
+.fp-hero-title {
+  margin: 1rem 0 0.5rem;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.fp-hero-title em {
+  font-style: normal;
+  color: #00c9a7;
+}
+
+.fp-hero-sub {
+  max-width: 720px;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.fp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: rgba(0, 201, 167, 0.12);
+  border-radius: 999px;
+  color: #00c9a7;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.fp-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+.fp-sec span {
+  color: #c9a84c;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.fp-aud-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.fp-aud {
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+}
+
+.fp-aud-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #00c9a7;
+}
+
+.fp-aud-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.fp-aud-list {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fp-aud-list li {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+}
+
+.fp-aud-dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-top: 0.45rem;
+  border-radius: 50%;
+  background: #00c9a7;
+}
+
+.fp-aud-strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.fp-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+}
+
+.fp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  background: #00c9a7;
+  color: #07101a;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .fp-aud-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

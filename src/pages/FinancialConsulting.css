@@ -1,187 +1,68 @@
-/* =========================================
-   1. MAIN CONTAINER
-   ========================================= */
-.services-container {
-  width: 100%;
-  max-width: 1400px; 
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
 
-/* =========================================
-   2. HERO BANNER
-   ========================================= */
-.hero-section {
-  background: linear-gradient(135deg, #1a2a3a 0%, #111c26 100%); 
-  padding: 60px 50px;
-  border-radius: 16px; 
-  margin-top: -10px; 
-  margin-bottom: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
-}
-
-/* =========================================
-   BULLETPROOF HERO UNDERLINE FIX
-   ========================================= */
-/* =========================================
-   THE "NUCLEAR" UNDERLINE CENTERING FIX
-   ========================================= */
-.hero-section h1 {
-  color: #ffffff !important;
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-top: 0;
-  margin-bottom: 25px !important; /* Make room for the absolute bar */
+.fp {
+  --gold: #C9A84C;
+  --gold-l: #F0D080;
+  --gold-dim: rgba(201, 168, 76, 0.15);
+  --gb: rgba(201, 168, 76, 0.2);
+  --teal: #00C9A7;
+  --td: rgba(0, 201, 167, 0.11);
+  --tb: rgba(0, 201, 167, 0.22);
+  --d0: #060B0E;
+  --d1: #0C1419;
+  --d2: #111D23;
+  --d3: #182530;
+  --tm: #EAE6DC;
+  --ts: rgba(220, 210, 185, 0.58);
   
-  text-align: center !important; 
-  position: relative !important; /* Mandates this as the anchor point */
-  display: block !important; 
-  width: 100% !important;
+  background: var(--d0);
+  color: var(--tm);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 100vh;
 }
 
-/* The Signature Teal Underline */
-.hero-section h1::after {
-  content: "" !important;
-  position: absolute !important;
-  bottom: -15px !important; 
-  
-  /* THIS IS THE MAGIC: It grabs both walls and pulls to the exact center */
-  left: 0 !important;
-  right: 0 !important;
-  margin: 0 auto !important; 
-  
-  width: 80px !important;
-  height: 5px !important;
-  background-color: #14c4b5 !important;
-  border-radius: 3px !important;
-  
-  /* Strips away any old broken translate rules that might be stuck */
-  transform: none !important; 
-}
+/* Base & Hero Styles */
+.fp-hero { position: relative; background: var(--d1); padding: 56px 48px 50px; overflow: hidden; border-bottom: 1px solid var(--gb); }
+.fp-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+.fp-orb1 { position: absolute; right: -60px; top: -60px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, rgba(0, 201, 167, 0.09) 0%, transparent 65%); pointer-events: none; }
+.fp-orb2 { position: absolute; left: -40px; bottom: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 65%); pointer-events: none; }
+.fp-badge { display: inline-flex; align-items: center; gap: 7px; background: var(--td); border: 1px solid var(--tb); color: var(--teal); font-size: 11px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; margin-bottom: 20px; }
+.fp-hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: var(--tm); line-height: 1.1; margin-bottom: 14px; }
+.fp-hero-title em { color: var(--gold); font-style: normal; }
+.fp-hero-sub { font-size: 0.96rem; color: var(--ts); line-height: 1.8; max-width: 580px; font-weight: 300; margin-bottom: 28px; }
+.fp-sec { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+.fp-sec::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(201, 168, 76, 0.3), transparent); }
+.fp-sec span { font-size: 10.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+.fp-body { padding: 52px 48px 60px; }
 
-.hero-subtitle {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #cbd5e1; 
-  margin-bottom: 10px;
-  max-width: 900px;
-}
+/* Consulting Specific Styles */
+.fp-aud-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.fp-aud { background: var(--d2); border: 1px solid var(--gb); border-radius: 12px; padding: 26px 22px; position: relative; overflow: hidden; }
+.fp-aud::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+.fp-aud.individuals::before { background: linear-gradient(90deg, var(--teal), transparent); }
+.fp-aud.businesses::before { background: linear-gradient(90deg, var(--gold), transparent); }
+.fp-aud.startups::before { background: linear-gradient(90deg, rgba(201, 168, 76, 0.5), var(--teal)); }
+.fp-aud-tag { font-size: 10px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 12px; }
+.fp-aud.individuals .fp-aud-tag { color: var(--teal); }
+.fp-aud.businesses .fp-aud-tag { color: var(--gold); }
+.fp-aud.startups .fp-aud-tag { color: rgba(201, 168, 76, 0.8); }
+.fp-aud-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--tm); margin-bottom: 16px; }
+.fp-aud-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.fp-aud-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.84rem; color: var(--ts); line-height: 1.6; }
+.fp-aud-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 5px; }
+.fp-aud.businesses .fp-aud-dot { background: var(--gold); }
+.fp-aud.startups .fp-aud-dot { background: rgba(201, 168, 76, 0.7); }
+.fp-aud-strong { display: block; font-weight: 600; font-size: 0.86rem; color: var(--tm); margin-bottom: 2px; }
 
-/* =========================================
-   3. CONTENT BLOCKS & HEADINGS
-   ========================================= */
-.services-content {
-  padding: 10px 0;
-}
+/* CTA Block */
+.fp-cta { background: linear-gradient(135deg, var(--d2) 0%, var(--d3) 100%); border: 1px solid var(--gb); border-radius: 12px; padding: 34px 38px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 48px; }
+.fp-cta h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 700; color: var(--tm); margin-bottom: 5px; }
+.fp-cta p { font-size: 0.86rem; color: var(--ts); margin: 0; font-weight: 300; }
+.fp-cta-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--gold); color: #07100E; font-size: 0.86rem; font-weight: 600; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, transform 0.18s; }
+.fp-cta-btn:hover { background: var(--gold-l); transform: translateY(-2px); }
 
-/* Target the h2 inside your specific section divs to give them the teal bar */
-.Individuals h2,
-.Businesses h2,
-.Startups h2 {
-  position: relative;
-  color: #1a2a3a; 
-  font-weight: 700;
-  letter-spacing: 0.5px; 
-  padding: 12px 18px; 
-  margin-bottom: 25px;
-  margin-top: 0;
-  background-color: #f4f7f9; 
-  border-left: 6px solid #14c4b5; 
-  border-radius: 0 8px 8px 0; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02); 
-  display: inline-block; 
-  min-width: 250px;
-}
-
-/* Standard Divider */
-.divider {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
-  margin: 40px 0;
-}
-
-/* =========================================
-   4. CUSTOM LIST (Service Points)
-   ========================================= */
-.custom-list {
-  list-style-type: none;
-  padding: 0;
-  display: grid;
-  gap: 18px; 
-}
-
-.custom-list li {
-  position: relative;
-  padding-left: 30px;
-  font-size: 1.1rem;
-  color: #2d3748;
-  line-height: 1.5;
-}
-
-.custom-list li b {
-  color: #1a2a3a;
-  font-weight: 700;
-}
-
-/* Sleek teal square bullet point */
-.custom-list li::before {
-  content: "■";
-  color: #14c4b5;
-  position: absolute;
-  left: 0;
-  top: 3px;
-  font-size: 0.9rem;
-}
-/* =========================================
-   📱 HERO ALIGNMENT FIX (FOR SMALLER DEVICES)
-   ========================================= */
-
-/* New base styling for the text block itself */
-.individuals-text-block {
-  text-align: left; /* Anchors all text and bullets to the left */
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Adds clean spacing between elements */
-  margin-left: 0; /* Important: removes any inherited left padding */
-}
-
-/* Base styling for the problematic h2 heading with the bar */
-.individuals-text-block h2 {
-  position: relative;
-  display: inline-block; /* Prevents the background from taking up full-width */
-  color: #1a2a3a;
-  font-weight: 700;
-  padding: 10px 18px 10px 24px; /* Increases padding-left to give the bar space */
-  margin-bottom: 5px;
-  background-color: #f4f7f9;
-  border-radius: 0 8px 8px 0;
-  min-width: 250px; /* Ensures a good size even with left text alignment */
-  
-  /* Create the signature teal decorative bar on the LEFT */
-  border-left: 6px solid #14c4b5; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-}
-
-/* Adjust the custom list and list items so they also line up with the bar */
-.individuals-text-block .custom-list {
-  padding-left: 0; /* Removes all inherited bullet padding */
-  margin-top: 5px; /* Pulls the list up slightly closer to the h2 */
-}
-
-/* Crucial: Aligns the list text with the heading text, right next to the bar */
-.individuals-text-block .custom-list li {
-  padding-left: 32px; /* Pulls text in to line up with the bar */
-  font-size: 1.1rem;
-}
-
-/* Adjust the small teal bullet point to fit the new alignment */
-.individuals-text-block .custom-list li::before {
-  content: "■";
-  color: #14c4b5;
-  position: absolute;
-  left: 6px; /* Adjusts its placement in the new left-aligned block */
-  top: 3px;
-  font-size: 0.9rem;
+/* Responsive */
+@media (max-width: 768px) {
+  .fp-aud-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .fp-body, .fp-hero { padding: 30px 20px; }
 }

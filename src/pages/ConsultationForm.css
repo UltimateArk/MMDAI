@@ -1,24 +1,25 @@
-/* =========================================
-   PREMIUM CONSULTATION FORM STYLING
-   ========================================= */
+/* ============================================================
+   REFINED CONSULTATION FORM — MMD Analytics Theme
+============================================================ */
+
 .consultation-page-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
   min-height: 70vh;
-  background-color: var(--light-bg, #f0fbf9); /* Ice Teal Wash */
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; /* Modern Font Stack */
+  background-color: #F5F7F9; /* MMD Light Bg */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .consultation-card {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   width: 100%;
-  max-width: 680px; /* Slightly wider for elegance */
-  border-radius: 20px; /* Softer, modern corners */
-  padding: 50px 60px; /* Luxurious breathing room */
-  box-shadow: 0 20px 50px rgba(10, 31, 54, 0.08); /* Deep, soft shadow */
-  border-top: 6px solid var(--accent-teal, #14c4b5);
+  max-width: 720px; 
+  border-radius: 24px; 
+  padding: 50px 60px; 
+  box-shadow: 0 10px 40px rgba(13, 30, 44, 0.12), 0 4px 12px rgba(13, 30, 44, 0.06); /* MMD Navy Shadow Soft */
+  border-top: 4px solid #00C9A7; /* MMD Teal */
 }
 
 /* --- HEADERS --- */
@@ -28,45 +29,46 @@
 }
 
 .consultation-header h1 {
-  color: var(--primary-blue, #0A1F36);
-  font-size: 2.4rem;
+  color: #0D1E2C; /* MMD Navy */
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 800;
   margin-top: 0;
   margin-bottom: 12px;
-  letter-spacing: -0.5px; /* Tighter letter spacing looks more modern */
+  line-height: 1.15;
 }
 
 .consultation-header p {
-  color: #64748b;
-  font-size: 1.15rem;
+  color: #5A6A7A; /* MMD Muted Text */
+  font-size: 1.125rem;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .section-title {
-  color: var(--accent-teal, #14c4b5);
-  font-size: 1.05rem;
+  color: #00C9A7; /* MMD Teal */
+  font-size: 0.875rem;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   font-weight: 700;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #f1f5f9;
-  padding-bottom: 8px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #E2E8EF;
+  padding-bottom: 12px;
 }
 
 .form-divider {
   border: 0;
   height: 1px;
-  background-color: #e2e8f0;
-  margin: 15px 0 5px 0;
+  background-color: #E2E8EF; /* MMD Border */
+  margin: 20px 0 10px 0;
 }
 
 /* --- FORM LAYOUT --- */
 .premium-form {
   display: flex;
   flex-direction: column;
-  gap: 24px; /* More space between rows */
+  gap: 24px; 
 }
 
 .form-row {
@@ -86,11 +88,11 @@
 }
 
 .input-group label {
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: #334155; /* Slightly softer than pure black */
+  color: #1A3A50; /* MMD Navy Mid */
   margin-left: 4px;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 /* --- THE INTERACTIVE BOXES --- */
@@ -98,71 +100,76 @@
 .premium-form textarea,
 .custom-select {
   width: 100%;
-  padding: 16px 18px; /* Taller, more clickable inputs */
-  font-size: 1.05rem;
+  padding: 14px 18px; 
+  font-size: 1rem;
   font-family: inherit;
-  color: #0f172a;
-  background-color: #f8fafc;
-  border: 2px solid transparent; /* Transparent border by default for smoothness */
-  border-radius: 12px; /* Rounder inputs */
+  color: #1A2332; /* MMD Text */
+  background-color: #FFFFFF;
+  border: 1.5px solid #E2E8EF; /* MMD Border */
+  border-radius: 12px; 
   outline: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Buttery smooth animation */
+  transition: all 0.25s ease; 
   box-sizing: border-box;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); /* Slight inner depth */
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-/* 1. Hover State (Invites the user to click) */
+.premium-form input::placeholder,
+.premium-form textarea::placeholder {
+  color: #8A9BAC; /* MMD Light Text */
+}
+
+/* 1. Hover State */
 .premium-form input:hover,
 .premium-form textarea:hover,
 .custom-select:hover {
-  background-color: #f1f5f9;
+  border-color: #8A9BAC;
 }
 
-/* 2. Focus State (The Teal Glow) */
+/* 2. Focus State (MMD Teal Glow) */
 .premium-form input:focus,
 .premium-form textarea:focus,
 .custom-select:focus {
-  background-color: #ffffff;
-  border-color: var(--accent-teal, #14c4b5);
-  box-shadow: 0 0 0 4px rgba(20, 196, 181, 0.15), 0 4px 12px rgba(0,0,0,0.05); /* Outer glow + drop shadow */
-  transform: translateY(-2px); /* Lifts the box up slightly when typing */
+  border-color: #00C9A7; /* MMD Teal */
+  box-shadow: 0 0 0 3px rgba(0, 201, 167, 0.12); /* MMD Glow */
+  transform: translateY(-1px); 
 }
 
 /* Custom Dropdown Arrow */
 .custom-select {
   cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%231a2a3a%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6A7A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 18px top 50%;
-  background-size: 12px auto;
+  background-position: right 18px center;
+  padding-right: 40px;
 }
 
 /* --- CHECKBOX & CONSENT --- */
 .checkbox-group {
   display: flex;
   align-items: flex-start;
-  gap: 15px;
-  margin-top: 15px;
-  padding: 20px;
-  background-color: #f8fafc;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 18px;
+  background-color: rgba(0, 201, 167, 0.04);
   border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 201, 167, 0.15);
+  transition: all 0.25s ease;
 }
 
 .checkbox-group:hover {
-  background-color: #f1f5f9;
-  border-color: #cbd5e1;
+  background-color: rgba(0, 201, 167, 0.08);
+  border-color: rgba(0, 201, 167, 0.25);
 }
 
 .checkbox-group input[type="checkbox"] {
-  margin-top: 3px;
-  width: 22px; /* Larger, easier to click checkbox */
-  height: 22px;
+  margin-top: 2px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  accent-color: var(--accent-teal, #14c4b5);
+  accent-color: #00C9A7; /* MMD Teal */
   transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .checkbox-group input[type="checkbox"]:hover {
@@ -170,41 +177,47 @@
 }
 
 .consent-text {
-  font-size: 0.95rem !important;
-  color: #4a5568 !important;
+  font-size: 0.875rem !important;
+  color: #5A6A7A !important;
   line-height: 1.6;
   font-weight: 500 !important;
   cursor: pointer;
+  margin: 0;
 }
 
 /* --- SUBMIT BUTTON --- */
 .submit-btn {
-  background-color: var(--primary-blue, #0A1F36);
-  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00C9A7; /* MMD Teal */
+  color: #0D1E2C; /* MMD Navy */
   font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: 0.5px;
-  padding: 18px;
-  border: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+  padding: 16px 32px;
+  border: 2px solid transparent;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  margin-top: 20px;
-  box-shadow: 0 4px 6px rgba(10, 31, 54, 0.2);
+  transition: all 0.25s ease;
+  margin-top: 16px;
+  box-shadow: 0 4px 16px rgba(0, 201, 167, 0.30); /* MMD Teal Shadow */
 }
 
 .submit-btn:hover {
-  background-color: var(--accent-teal, #14c4b5);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(20, 196, 181, 0.3);
+  background-color: #00A889; /* MMD Teal Mid */
+  color: #0D1E2C;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 201, 167, 0.25);
 }
 
 .submit-btn:active {
-  transform: translateY(0);
+  transform: scale(0.97);
 }
 
 .submit-btn:disabled {
-  background-color: #94a3b8;
+  background-color: #E2E8EF;
+  color: #8A9BAC;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
@@ -215,35 +228,30 @@
    ========================================= */
 @media screen and (max-width: 768px) {
   
-  /* Reduces outer wrapper padding on phones */
   .consultation-page-wrapper {
-    padding: 30px 10px; 
+    padding: 40px 16px; 
   }
 
-  /* Drastically cuts inner padding to let inputs stretch across the screen */
   .consultation-card {
-    padding: 30px 20px; 
+    padding: 32px 20px; 
     border-radius: 16px;
   }
   
-  /* Stacks side-by-side inputs (Name/Phone) vertically */
   .form-row {
     flex-direction: column;
     gap: 20px;
   }
   
-  /* Scales down the header text so it doesn't wrap awkwardly */
   .consultation-header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .consultation-header p {
     font-size: 1rem;
   }
 
-  /* Tightens up the checkbox container to save screen real estate */
   .checkbox-group {
-    padding: 15px;
+    padding: 16px;
     gap: 12px;
   }
 }

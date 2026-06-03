@@ -1,158 +1,429 @@
-/* =========================================
-   1. MAIN CONTAINER
-   ========================================= */
-.services-container {
-  width: 100%;
-  max-width: 1400px; 
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+/* ============================================================
+   COAL TRADING DIVISION — Refined Dark Gold / Teal Theme
+   MMD Analytics · Redesigned for professionalism & interaction
+============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+
+/* ── 1. CSS TOKENS ── */
+.ct-root {
+  --gold:        #C9A84C;
+  --gold-light:  #F0D080;
+  --gold-dim:    rgba(201, 168, 76, 0.18);
+  --gold-border: rgba(201, 168, 76, 0.18);
+  --teal:        #00C9A7;
+  --teal-dim:    rgba(0, 201, 167, 0.12);
+  --teal-border: rgba(0, 201, 167, 0.25);
+  --dark-0:      #060B0E;
+  --dark-1:      #0C1419;
+  --dark-2:      #111D23;
+  --dark-3:      #182530;
+  --dark-4:      #1E2F3C;
+  --text-main:   #EAE6DC;
+  --text-sub:    rgba(220, 210, 185, 0.6);
+
+  background:  var(--dark-0);
+  color:       var(--text-main);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height:  100vh;
+  padding:     0;
+  margin:      0;
 }
 
-/* =========================================
-   2. HERO BANNER
-   ========================================= */
-.hero-section {
-  background: linear-gradient(135deg, #1a2a3a 0%, #111c26 100%); 
-  padding: 60px 50px;
-  border-radius: 16px; 
-  margin-top: -10px; 
-  margin-bottom: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+/* ── 2. HERO ── */
+.ct-hero {
+  position:      relative;
+  background:    var(--dark-1);
+  padding:       64px 52px 56px;
+  overflow:      hidden;
+  border-bottom: 1px solid var(--gold-border);
 }
 
-.hero-section h1 {
-  color: #ffffff;
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 15px;
-  margin-top: 0;
-  position: relative;
-  display: inline-block;
+/* Subtle grid overlay */
+.ct-hero-grid {
+  position:         absolute;
+  inset:            0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events:  none;
 }
 
-/* The Signature Teal Underline */
-.hero-section h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  height: 5px;
-  width: 80px; 
-  background-color: #14c4b5; 
-  border-radius: 3px;
+/* Glow orbs */
+.ct-hero-orb {
+  position:      absolute;
+  right:        -60px;
+  top:          -80px;
+  width:         360px;
+  height:        360px;
+  background:    radial-gradient(circle at center, rgba(0,201,167,0.09) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.hero-subtitle {
-  font-size: 1.15rem;
+.ct-hero-orb2 {
+  position:      absolute;
+  left:          20%;
+  bottom:       -100px;
+  width:         260px;
+  height:        260px;
+  background:    radial-gradient(circle at center, rgba(201,168,76,0.06) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ct-badge {
+  display:      inline-flex;
+  align-items:  center;
+  gap:          7px;
+  background:   var(--teal-dim);
+  border:       1px solid var(--teal-border);
+  color:        var(--teal);
+  font-size:    11px;
+  font-weight:  600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  padding:      5px 14px;
+  border-radius: 4px;
+  margin-bottom: 22px;
+}
+
+.ct-hero-title {
+  font-family:  'Cormorant Garamond', Georgia, serif;
+  font-size:    clamp(2.4rem, 4.8vw, 3.8rem);
+  font-weight:  700;
+  color:        var(--gold);
+  letter-spacing: 0.5px;
+  line-height:  1.08;
+  margin:       0 0 18px;
+}
+
+.ct-hero-title span {
+  color:       var(--text-main);
+  font-weight: 400;
+}
+
+.ct-hero-sub {
+  font-size:   1rem;
+  color:       var(--text-sub);
+  line-height: 1.8;
+  max-width:   580px;
+  margin:      0;
+  font-weight: 300;
+}
+
+/* ── Stats strip ── */
+.ct-stats-row {
+  display:       flex;
+  gap:           0;
+  margin-top:    36px;
+  border:        1px solid var(--gold-border);
+  border-radius: 10px;
+  overflow:      hidden;
+  max-width:     480px;
+}
+
+.ct-stat {
+  flex:       1;
+  padding:    14px 20px;
+  border-right: 1px solid var(--gold-border);
+  background: rgba(255,255,255,0.02);
+}
+
+.ct-stat:last-child { border-right: none; }
+
+.ct-stat-val {
+  font-family:  'Cormorant Garamond', serif;
+  font-size:    1.75rem;
+  font-weight:  700;
+  color:        var(--gold);
+  line-height:  1;
+}
+
+.ct-stat-lbl {
+  font-size:      10.5px;
+  color:          var(--text-sub);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top:     4px;
+}
+
+/* ── 3. BODY ── */
+.ct-body {
+  padding:   52px 52px 64px;
+  max-width: 1000px;
+}
+
+/* Section label with trailing line */
+.ct-section-label {
+  display:        flex;
+  align-items:    center;
+  gap:            10px;
+  margin-bottom:  28px;
+}
+
+.ct-section-label::after {
+  content:    '';
+  flex:       1;
+  height:     1px;
+  background: linear-gradient(90deg, rgba(201,168,76,0.35), transparent);
+}
+
+.ct-section-label span {
+  font-size:      10.5px;
+  font-weight:    600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color:          var(--gold);
+}
+
+/* ── 4. COAL TYPE CARDS ── */
+.ct-coal-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   16px;
+  margin-bottom:         24px;
+}
+
+.ct-coal-card {
+  background:    var(--dark-2);
+  border:        1px solid rgba(201,168,76,0.1);
+  border-radius: 10px;
+  padding:       24px 22px;
+  cursor:        pointer;
+  text-align:    left;
+  position:      relative;
+  overflow:      hidden;
+  transition:    border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+
+  /* Reset button defaults */
+  color: inherit;
+  font-family: inherit;
+}
+
+.ct-coal-card::before {
+  content:    '';
+  position:   absolute;
+  top:        0; left: 0; right: 0;
+  height:     2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  opacity:    0;
+  transition: opacity 0.25s ease;
+}
+
+.ct-coal-card:hover,
+.ct-coal-card:focus-visible {
+  border-color: rgba(201,168,76,0.35);
+  background:   var(--dark-3);
+  transform:    translateY(-3px);
+  outline:      none;
+}
+
+.ct-coal-card:hover::before,
+.ct-coal-card:focus-visible::before { opacity: 1; }
+
+.ct-coal-card.active {
+  border-color: rgba(201,168,76,0.5);
+  background:   var(--dark-3);
+}
+
+.ct-coal-card.active::before { opacity: 1; }
+
+.ct-card-icon {
+  font-size:     22px;
+  margin-bottom: 12px;
+  display:       block;
+}
+
+.ct-card-title {
+  font-family:  'Cormorant Garamond', serif;
+  font-size:    1.2rem;
+  font-weight:  700;
+  color:        var(--text-main);
+  margin:       0 0 8px;
+}
+
+.ct-card-desc {
+  font-size:   0.82rem;
+  color:       var(--text-sub);
   line-height: 1.6;
-  color: #cbd5e1; 
-  margin-bottom: 10px;
-  max-width: 900px;
+  margin:      0;
 }
 
-/* =========================================
-   3. CONTENT BLOCKS & HEADINGS
-   ========================================= */
-.services-content {
-  padding: 10px 0;
+/* ── 5. DETAIL PANEL ── */
+.ct-detail-panel {
+  background:    var(--dark-2);
+  border:        1px solid var(--gold-border);
+  border-radius: 10px;
+  padding:       26px 28px;
+  margin-bottom: 52px;
+  animation:     ctFadeIn 0.3s ease;
 }
 
-/* Professional Teal Bar Headings for the specific sections */
-.coal-types h2,
-.services-provided h2 {
-  position: relative;
-  color: #1a2a3a; 
-  font-weight: 700;
-  letter-spacing: 0.5px; 
-  padding: 12px 18px; 
-  margin-bottom: 25px;
-  margin-top: 0;
-  background-color: #f4f7f9; 
-  border-left: 6px solid #14c4b5; 
-  border-radius: 0 8px 8px 0; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02); 
-  display: inline-block; 
-  min-width: 250px;
+@keyframes ctFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Standard Soft Divider */
-.divider {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
-  margin: 40px 0;
+.ct-detail-head {
+  font-family:   'Cormorant Garamond', serif;
+  font-size:     1.15rem;
+  font-weight:   700;
+  color:         var(--gold);
+  margin:        0 0 18px;
 }
 
-/* =========================================
-   4. CUSTOM LIST (Service Points)
-   ========================================= */
-/* Targets both the .custom-list and the plain ul in your React code */
-.custom-list,
-.services-provided ul {
-  list-style-type: none;
-  padding: 0;
-  display: grid;
-  gap: 18px; 
+.ct-specs {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   12px;
 }
 
-.custom-list li,
-.services-provided ul li {
-  position: relative;
-  padding-left: 30px;
-  font-size: 1.1rem;
-  color: #2d3748;
-  line-height: 1.5;
+.ct-spec {
+  background:    var(--dark-3);
+  border-radius: 7px;
+  padding:       12px 14px;
+  border:        1px solid rgba(255,255,255,0.04);
 }
 
-/* Bold text inside lists */
-.custom-list li b,
-.services-provided ul li b {
-  color: #1a2a3a;
-  font-weight: 700;
+.ct-spec-key {
+  font-size:      10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color:          var(--text-sub);
+  margin-bottom:  4px;
 }
 
-/* Sleek teal square bullet point */
-.custom-list li::before,
-.services-provided ul li::before {
-  content: "■";
-  color: #14c4b5;
-  position: absolute;
-  left: 0;
-  top: 3px;
-  font-size: 0.9rem;
-}
-/* =========================================
-   5. ENQUIRY CALL TO ACTION
-   ========================================= */
-.Enquiry {
-  text-align: center; /* Centers the button neatly on the page */
-  margin-top: 40px; 
-  margin-bottom: 20px;
+.ct-spec-val {
+  font-size:   0.9rem;
+  font-weight: 500;
+  color:       var(--text-main);
 }
 
-.Enquiry a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #14c4b5; /* Signature MMD Teal */
-  color: #ffffff;
-  padding: 14px 32px;
-  font-size: 1.1rem;
-  font-weight: 700;
+/* ── 6. DIVIDER ── */
+.ct-divider {
+  border:     none;
+  height:     1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.22), transparent);
+  margin:     0 0 52px;
+}
+
+/* ── 7. SERVICES GRID ── */
+.ct-services-grid {
+  display:               grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:                   14px;
+  margin-bottom:         52px;
+}
+
+.ct-service-item {
+  display:       flex;
+  align-items:   flex-start;
+  gap:           14px;
+  background:    var(--dark-2);
+  border:        1px solid rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding:       18px 20px;
+  transition:    border-color 0.22s ease, background 0.22s ease;
+}
+
+.ct-service-item:hover {
+  border-color: rgba(0,201,167,0.22);
+  background:   var(--dark-3);
+}
+
+.ct-svc-icon {
+  font-size:     20px;
+  flex-shrink:   0;
+  margin-top:    2px;
+}
+
+.ct-svc-content { flex: 1; }
+
+.ct-svc-title {
+  font-size:   0.95rem;
+  font-weight: 600;
+  color:       var(--text-main);
+  margin:      0 0 5px;
+}
+
+.ct-svc-desc {
+  font-size:   0.8rem;
+  color:       var(--text-sub);
+  line-height: 1.6;
+  margin:      0;
+}
+
+/* ── 8. CTA BANNER ── */
+.ct-cta-area {
+  background:     linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
+  border:         1px solid var(--gold-border);
+  border-radius:  12px;
+  padding:        36px 40px;
+  display:        flex;
+  align-items:    center;
+  justify-content: space-between;
+  gap:            24px;
+  flex-wrap:      wrap;
+}
+
+.ct-cta-left h3 {
+  font-family:  'Cormorant Garamond', serif;
+  font-size:    1.6rem;
+  font-weight:  700;
+  color:        var(--text-main);
+  margin:       0 0 6px;
+}
+
+.ct-cta-left p {
+  font-size:   0.88rem;
+  color:       var(--text-sub);
+  margin:      0;
+  font-weight: 300;
+}
+
+.ct-cta-btn {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            9px;
+  background:     var(--gold);
+  color:          #07100E;
+  font-family:    'DM Sans', sans-serif;
+  font-size:      0.9rem;
+  font-weight:    600;
+  letter-spacing: 0.3px;
+  padding:        14px 30px;
+  border-radius:  8px;
+  border:         none;
+  cursor:         pointer;
   text-decoration: none;
-  border-radius: 8px;
-  
-  /* Smooth animation and a soft glowing shadow */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 10px rgba(20, 196, 181, 0.25);
+  white-space:    nowrap;
+  flex-shrink:    0;
+  transition:     background 0.2s, transform 0.18s, box-shadow 0.2s;
 }
 
-.Enquiry a:hover {
-  background-color: #10a396; /* Slightly deeper teal on hover */
-  color: #ffffff;
-  
-  /* Lifts the button up and deepens the shadow */
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(20, 196, 181, 0.4);
+.ct-cta-btn:hover {
+  background:  var(--gold-light);
+  transform:   translateY(-2px);
+  box-shadow:  0 8px 28px rgba(201,168,76,0.22);
+}
+
+.ct-cta-btn:active { transform: scale(0.97); }
+
+/* ── 9. RESPONSIVE ── */
+@media screen and (max-width: 768px) {
+  .ct-hero { padding: 40px 22px 36px; }
+  .ct-body  { padding: 32px 22px 48px; }
+
+  .ct-coal-grid        { grid-template-columns: 1fr; }
+  .ct-specs            { grid-template-columns: repeat(2, 1fr); }
+  .ct-services-grid    { grid-template-columns: 1fr; }
+  .ct-cta-area         { flex-direction: column; align-items: flex-start; }
+
+  .ct-stats-row        { flex-direction: column; max-width: 100%; }
+  .ct-stat             { border-right: none; border-bottom: 1px solid var(--gold-border); }
+  .ct-stat:last-child  { border-bottom: none; }
+
+  .ct-cta-btn          { width: 100%; justify-content: center; }
 }

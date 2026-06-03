@@ -1,46 +1,52 @@
-/* =========================================
-   CUSTOM NATIVE FORM STYLING
-   ========================================= */
+/* ============================================================
+   REFINED ENQUIRY FORM — MMD Analytics Theme
+============================================================ */
+
 .enquiry-page-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
+  background-color: #F5F7F9; /* MMD Light Bg */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .enquiry-card {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   width: 100%;
-  max-width: 600px;
-  border-radius: 16px;
-  padding: 50px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border-top: 6px solid var(--accent-teal, #14c4b5); /* Signature Teal Top Border */
+  max-width: 640px;
+  border-radius: 24px;
+  padding: 50px 60px;
+  box-shadow: 0 10px 40px rgba(13, 30, 44, 0.12), 0 4px 12px rgba(13, 30, 44, 0.06); /* MMD Soft Navy Shadow */
+  border-top: 4px solid #00C9A7; /* Signature MMD Teal */
 }
 
 .enquiry-header {
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 .enquiry-header h1 {
-  color: var(--primary-blue, #0A1F36);
-  font-size: 2.2rem;
+  color: #0D1E2C; /* MMD Navy */
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
   font-weight: 800;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  line-height: 1.15;
 }
 
 .enquiry-header p {
-  color: #64748b;
-  font-size: 1.1rem;
+  color: #5A6A7A; /* MMD Muted Text */
+  font-size: 1.125rem;
   margin: 0;
+  line-height: 1.7;
 }
 
 .standalone-contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .input-group {
@@ -50,54 +56,77 @@
 }
 
 .input-group label {
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--primary-blue, #0A1F36);
-  margin-left: 5px;
+  color: #1A3A50; /* MMD Navy Mid */
+  margin-left: 4px;
+  transition: color 0.25s ease;
 }
 
-/* Inputs matching your premium theme */
+/* Inputs matching the premium MMD theme */
 .standalone-contact-form input,
 .standalone-contact-form textarea {
   width: 100%;
-  padding: 14px 16px;
-  font-size: 1.05rem;
+  padding: 14px 18px;
+  font-size: 1rem;
   font-family: inherit;
-  color: #1a2a3a;
-  background-color: #f8fafc;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
+  color: #1A2332; /* MMD Text */
+  background-color: #FFFFFF;
+  border: 1.5px solid #E2E8EF; /* MMD Light Border */
+  border-radius: 12px;
   outline: none;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-/* Teal glow when typing */
+.standalone-contact-form input::placeholder,
+.standalone-contact-form textarea::placeholder {
+  color: #8A9BAC; /* MMD Light Text */
+}
+
+.standalone-contact-form input:hover,
+.standalone-contact-form textarea:hover {
+  border-color: #8A9BAC;
+}
+
+/* MMD Teal glow when typing */
 .standalone-contact-form input:focus,
 .standalone-contact-form textarea:focus {
-  border-color: #14c4b5;
-  box-shadow: 0 0 0 3px rgba(20, 196, 181, 0.15);
-  background-color: #ffffff;
+  border-color: #00C9A7; /* MMD Teal */
+  box-shadow: 0 0 0 3px rgba(0, 201, 167, 0.12);
+  transform: translateY(-1px);
 }
 
 /* Submit Button */
 .enquiry-submit-btn {
-  background-color: var(--primary-blue, #0A1F36);
-  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00C9A7; /* MMD Teal */
+  color: #0D1E2C; /* MMD Navy for high contrast */
   font-weight: 700;
-  font-size: 1.2rem;
-  padding: 16px;
-  border: none;
-  border-radius: 8px;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+  padding: 16px 32px;
+  border: 2px solid transparent;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 15px;
+  transition: all 0.25s ease;
+  margin-top: 16px;
+  box-shadow: 0 4px 16px rgba(0, 201, 167, 0.30);
 }
 
 .enquiry-submit-btn:hover {
-  background-color: var(--accent-teal, #14c4b5);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(20, 196, 181, 0.25);
+  background-color: #00A889; /* MMD Teal Mid */
+  color: #0D1E2C;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 201, 167, 0.25);
+}
+
+.enquiry-submit-btn:active {
+  transform: scale(0.97);
 }
 
 /* =========================================
@@ -105,16 +134,16 @@
    ========================================= */
 @media screen and (max-width: 768px) {
   .enquiry-page-wrapper {
-    padding: 30px 10px; /* Reduces outer wrapper padding on phones */
+    padding: 40px 16px;
   }
 
   .enquiry-card {
-    padding: 30px 20px; /* Drastically cuts inner padding to let inputs stretch */
-    border-radius: 12px;
+    padding: 32px 20px; 
+    border-radius: 16px;
   }
 
   .enquiry-header h1 {
-    font-size: 1.8rem; /* Scales down the header text slightly to fit better */
+    font-size: 2rem; 
   }
 
   .enquiry-header p {
